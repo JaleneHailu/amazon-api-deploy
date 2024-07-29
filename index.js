@@ -5,7 +5,8 @@ dotenv.config();
 const stripe = require('stripe')(process.env.STRIPE_KEY);
 const app = express();
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:5173'];
+// Add Netlify URL to allowed origins
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:5173', 'https://amazonclone28.netlify.app'];
 
 app.use(cors({
     origin: (origin, callback) => {
